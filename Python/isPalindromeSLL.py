@@ -44,8 +44,6 @@ class Solution:
         curr_left = prev
         curr_right = right_pointer if even else right_pointer.next
 
-        # print(self.print_sll(curr_left))
-        # print(self.print_sll(curr_right))
 
         while curr_left:
             if not curr_left.val == curr_right.val:
