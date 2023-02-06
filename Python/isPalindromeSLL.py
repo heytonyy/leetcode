@@ -9,7 +9,8 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        if not head or not head.next:
+        # edge case
+        if not head:
             return False
 
         # find mid point and determine if even
