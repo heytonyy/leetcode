@@ -32,13 +32,6 @@ if __name__ == "__main__":
     head.next.next.next = ListNode(4)
     head.next.next.next.next = head.next
 
-    # print linked list
-    # current = head
-    # print("Original: ")
-    # while current:
-    #     print(current.val)
-    #     current = current.next
-
     # check if cycle
     hasCycle = Solution().hasCycle(head)
     print("Has Cycle: ", hasCycle)
