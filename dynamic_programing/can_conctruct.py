@@ -1,13 +1,31 @@
 # practice from: https://youtu.be/oBt53YbR9Kk
+from typing import List
 
-def can_contruct():
-    pass
+def can_contruct(target: str, wordBank: List[str]) -> bool:
 
+    def dp(target, wordBank, cache={}):
+        if target in cache:
+            return cache[target]
+        if target == '':
+            return True
+        
+        for word in wordBank:
+            if target.find(word) == 0:
+                new_target = target.replace(word, '')
+                if dp(new_target, wordBank, cache):
+                    cache[new_target] = True
+                    return True
+        
+        cache[target]=False
+        return False
 
+    return dp(target, wordBank)
 
 
 # TESTING
-print(can_contruct(7, [5, 3, 4, 7])) # [7]
-print(can_contruct(8, [5, 3, 2])) # [3, 5]
-print(can_contruct(8, [1, 4, 5])) # [4, 4]
-print(can_contruct(100, [1, 2, 5, 25])) # [25, 25, 25, 25]
+print(can_contruct('', ['cat', 'dog', 'mouse'])) # True
+print(can_contruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd'])) # True
+print(can_contruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar'])) # False
+print(can_contruct('enterapotentpot', ['a', 'p', 'ent', 'enter', 'ot', 'o', 't'])) # True
+print(can_contruct('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef',
+    ['e', 'ee', 'eee', 'eeee', 'eeeee', 'eeeeee'])) # False
