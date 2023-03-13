@@ -1,7 +1,6 @@
-# not leetcode.. practicing dp
-from typing import List
+# practice from: https://youtu.be/oBt53YbR9Kk
 
-#  -> List[int] or None
+from typing import List
 
 def howSum(targetSum: int, numbers: List[int]):
 

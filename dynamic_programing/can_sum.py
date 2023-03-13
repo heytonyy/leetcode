@@ -1,6 +1,6 @@
-# not on leetcode... for practicing dp
+# practice from: https://youtu.be/oBt53YbR9Kk
+
 from typing import List
-from functools import cache
 
 class Solution:
     def canSum(targetSum: int, numbers: List[int]) -> bool:

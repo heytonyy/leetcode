@@ -1,4 +1,5 @@
-# not leetcode... practcing dp
+# practice from: https://youtu.be/oBt53YbR9Kk
+
 from typing import List
 
 def best_sum(targetSum: int, numbers: List[int]):
