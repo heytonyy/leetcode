@@ -20,4 +20,4 @@ class Solution:
 
 s = Solution()
 
-print(s.grid_traveler(18,18))
+print(s.grid_traveler(1,4))
